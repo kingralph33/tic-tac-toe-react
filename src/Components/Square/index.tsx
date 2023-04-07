@@ -1,18 +1,15 @@
 import { useState } from 'react';
 import './Square.css';
 
-function Square({
-	value,
-	onSquareClick,
-}: {
+interface Props {
 	value: string;
-	onSquareClick: string;
-}) {
+	onSquareClick: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+export default function Square({ value, onSquareClick }: Props) {
 	return (
 		<button className='square' onClick={onSquareClick}>
 			{value}
 		</button>
 	);
 }
-
-export default Square;
